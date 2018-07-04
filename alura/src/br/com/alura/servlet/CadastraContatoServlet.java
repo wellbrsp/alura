@@ -7,7 +7,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.dao.ContatoDao;
 import br.com.alura.model.Contato;
 
-@WebServlet(name="cadastraContato", urlPatterns="/cadastraContato")
 public class CadastraContatoServlet extends HttpServlet {
 
 	@Override
@@ -39,5 +37,6 @@ public class CadastraContatoServlet extends HttpServlet {
 		
 		ContatoDao dao = new ContatoDao();
 		dao.adiciona(new Contato(nome, email, endereco, dataNascimento));
+		
 	}
 }
